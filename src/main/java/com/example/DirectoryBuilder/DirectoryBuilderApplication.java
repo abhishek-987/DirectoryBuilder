@@ -12,8 +12,10 @@ public class DirectoryBuilderApplication {
 	public static void main(String[] args) {
 		SpringApplication.run(DirectoryBuilderApplication.class, args);
 
-		String projectDir = "/home/abhishek/Downloads/helo";
-		ProcessBuilder processBuilder = new ProcessBuilder("mvn", "clean", "install", "-DskipTests");
+		String projectDir = "/home/abhishek/Downloads/helo"; // linux
+		String projectDir1 = "C:\\path\\to\\project\\directory"; // windows
+		ProcessBuilder processBuilder1 = new ProcessBuilder("cmd.exe", "/c", "mvn", "clean", "install", "-DskipTests"); //windows
+		ProcessBuilder processBuilder = new ProcessBuilder("mvn", "clean", "install", "-DskipTests"); //linux
 		processBuilder.directory(new File(projectDir));
 
 		try {
